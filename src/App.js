@@ -13,7 +13,7 @@ const App = () => {
                 <Button secondary rounded>Buy later</Button>
             </div>
             <div>
-                <Button warning outline>See Deal</Button>
+                <Button>See Deal</Button>
             </div>
             <div>
                 <Button danger rounded>Hide Ads</Button>
