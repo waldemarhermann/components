@@ -1,16 +1,25 @@
-import Button from "./Button";
+import Button from "./components/Button";
+import { GoBell, GoDesktopDownload } from "react-icons/go";
+
+const handleClick = () => {
+    console.log('Click!');
+}
+
+const handleMouseOver = () => {
+    console.log('touch!');
+}
 
 const App = () => {
     return (
         <div>
             <div>
-                <Button succes rounded outline>Click here!</Button>
+                <Button className='mb-5' onClick={handleClick} rounded ><GoBell />Click me!</Button>
             </div>
             <div>
-                <Button primary outline>Buy now</Button>
+                <Button onMouseOver={handleMouseOver} primary outline>Buy now</Button>
             </div>
             <div>
-                <Button secondary rounded>Buy later</Button>
+                <Button secondary rounded><GoDesktopDownload />Buy later</Button>
             </div>
             <div>
                 <Button>See Deal</Button>
