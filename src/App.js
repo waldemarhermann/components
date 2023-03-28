@@ -4,6 +4,10 @@ import Dropdown from "./pages/Dropdown";
 const App = () => {
     const [selection, setSelection] = useState(null);
 
+    const handleSelect = (option) => {
+        setSelection(option);
+    }
+
     const options = [
         { label: 'Red', value: 'red' },
         { label: 'Green', value: 'green' },
@@ -12,7 +16,7 @@ const App = () => {
 
     return (
         <div>
-            <Dropdown options={options} />
+            <Dropdown options={options} onSelect={handleSelect} selection={selection} />
         </div>
     )
 }
