@@ -1,16 +1,16 @@
-import { useState } from "react"
+import { useState } from "react";
 
-
-
-const Dropdown = ({ options, onSelect, selection }) => {
+const Dropdown = ({ options, onChange, value }) => {
     const [isOpen, setIsOpen] = useState(false);
+
     const handleClick = () => {
         setIsOpen(!isOpen);
     }
+
     const handleOptionClick = (option) => {
         // Close Dropdown
         setIsOpen(false);
-        onSelect(option);
+        onChange(option);
 
     }
 
@@ -22,14 +22,11 @@ const Dropdown = ({ options, onSelect, selection }) => {
         )
     })
 
-    let content = 'Select...';
-    if (selection) {
-        content = selection.label;
-    }
+    
 
     return (
         <div>
-            <div onClick={handleClick} >{content}</div>
+            <div onClick={handleClick} >{value?.label || 'Select...'}</div>
             {isOpen && <div>{renderedOptions}</div>}
         </div>
     )
